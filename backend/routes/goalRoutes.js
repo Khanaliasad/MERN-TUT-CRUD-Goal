@@ -7,10 +7,16 @@ const {
 } = require("../controllers/goalController");
 const router = express.Router();
 
-router.get("/", getGoals);
+// router.get("/", getGoals);
+// router.post("/", setGoals);
+// router.put("/:id", updateGoal);
+// router.delete("/:id", deleteGoal);
 
-router.post("/", setGoals);
-router.put("/:id", updateGoal);
-router.delete("/:id", deleteGoal);
+// another convention to clean the code is to use .routes
+router.route("/").get(getGoal).post(setGoals);
+router.route("/:id").put(updateGoal).delete(deleteGoal);
+
+
+
 
 module.exports = router;
