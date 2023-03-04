@@ -13,7 +13,7 @@ const router = express.Router();
 // router.delete("/:id", deleteGoal);
 
 // another convention to clean the code is to use .routes
-router.route("/").get(getGoal).post(setGoals);
+router.route("/").get(getGoals).post(setGoals);
 router.route("/:id").put(updateGoal).delete(deleteGoal);
 
 
